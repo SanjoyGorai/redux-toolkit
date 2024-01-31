@@ -8,11 +8,12 @@ const Counter = () => {
     console.log(store.getState());
 
     const stateValue = useSelector(state => state.counter.value);
+    const dispath = useDispatch();
 
     function handleClick(e) {
         switch (e.target.id) {
             case 'increment':
-            
+                dispath(increment())
                 break;
             case 'decrement':
 
