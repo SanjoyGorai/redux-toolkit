@@ -2,22 +2,20 @@
 import { createSlice, createReducer, createAction } from '@reduxjs/toolkit'
 
 
-const initialState = 0;
-const initialStateR = {
+const initialState = {
     value: 0
 }
 const incrementR = createAction('counter/increment')
 const decrementR = createAction('counter/decrement')
 
-const counterReducer = createReducer(initialStateR, (builder) => {
+const counterReducer = createReducer(initialState, (builder) => {
     builder
         .addCase(incrementR, (state, action) => {
             state.value++
         })
-        .addCase(decrementR, (state,action) => {
+        .addCase(decrementR, (state, action) => {
             state.value--
         })
-    // console.log();
 });
 
 const counterSlice = createSlice({
