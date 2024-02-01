@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import store from '../app/store';
-import { counterReducer, decrement, increment } from '../features/counter/counterSlice';
+import { counterReducer, decrement, decrementR, increment, incrementR, } from '../features/counter/counterSlice';
+
 
 const Counter = () => {
 
@@ -29,10 +30,10 @@ const Counter = () => {
         //for counterReducer
         switch (e.target.id) {
             case 'increment':
-
+                dispath(incrementR())
                 break;
             case 'decrement':
-
+                dispath(decrementR())
                 break;
         }
 
