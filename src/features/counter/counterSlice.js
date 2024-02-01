@@ -3,25 +3,25 @@ import { createSlice, createReducer, createAction } from '@reduxjs/toolkit'
 
 
 const initialState = {
-    value: 0
+    values: 0
 }
 const incrementR = createAction('counter/increment')
 const decrementR = createAction('counter/decrement')
 
-const counterReducer = createReducer(initialState, (builder) => {
+export const counterReducer = createReducer(initialState, (builder) => {
     builder
         .addCase(incrementR, (state, action) => {
-            state.value++
+            state.values++
         })
         .addCase(decrementR, (state, action) => {
-            state.value--
+            state.values--
         })
 });
 
-export const counterSlice = createSlice({
+const counterSlice = createSlice({
     name: 'counter',
     initialState: {
-        value: 0
+        value: 5
     },
     reducers: {
         increment: (state, action) => {
