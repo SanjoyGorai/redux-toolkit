@@ -7,6 +7,7 @@ const initialState = {
 
 export const increment = createAction('increment');
 export const decrement = createAction('decrement');
+export const incrementByAmount = createAction('incrementByAmount');
 
 const counterCReducer = createReducer(initialState, (builder) => {
     builder
@@ -15,6 +16,9 @@ const counterCReducer = createReducer(initialState, (builder) => {
         })
         .addCase(decrement, (state, action) => {
             state.v--;
+        })
+        .addCase(incrementByAmount, (state, action) => {
+            state.v += action.payload;
         })
 });
 
