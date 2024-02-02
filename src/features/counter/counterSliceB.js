@@ -11,10 +11,10 @@ export const decrement = createAction('decrement');
 const counterCReducer = createReducer(initialState, (builder) => {
     builder
         .addCase(increment, (state, action) => {
-            state.v++
+            state.v++;
         })
         .addCase(decrement, (state, action) => {
-            state.v--
+            state.v--;
         })
 });
 
