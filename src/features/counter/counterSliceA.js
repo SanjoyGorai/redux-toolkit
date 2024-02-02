@@ -1,7 +1,7 @@
 import { createAction, createReducer } from '@reduxjs/toolkit'
 
-export const increment = createAction('counter/increment');
-export const decrement = createAction('counter/decrement');
+export const incrementA = createAction('counter/incrementA');
+export const decrementA = createAction('counter/decrementA');
 
 const initialState = {
     value: 0
@@ -9,10 +9,10 @@ const initialState = {
 
 const counterReducerA = createReducer(initialState, (builder) => {
     builder
-        .addCase(increment, (state, action) => {
+        .addCase(incrementA, (state, action) => {
             state.value++;
         })
-        .addCase(decrement, (state, action) => {
+        .addCase(decrementA, (state, action) => {
             state.value--;
         });
 }); 

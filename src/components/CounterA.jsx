@@ -1,17 +1,17 @@
 import React from 'react'
-import { decrement, increment } from '../features/counter/counterSlice';
+import { decrementA, incrementA } from '../features/counter/counterSliceA';
 import { useSelector, useDispatch } from 'react-redux'
 
 const CounterA = () => {
     const state = useSelector(state => state.counterA.value);
-const dispatch = useDispatch ()
+    const dispatch = useDispatch()
     function handleClick(e) {
         switch (e.target.id) {
             case 'increment':
-                dispatch(increment())
+                dispatch(incrementA())
                 break;
             case 'decrement':
-                dispatch(decrement())
+                dispatch(decrementA())
                 break;
         }
 
